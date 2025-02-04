@@ -57,4 +57,13 @@ class CheckoutServiceTest {
         );
         assertEquals(new BigDecimal("2150.00"), total);
     }
+
+    @Test
+    void testInvalidProductThrowsException() {
+        ResponseStatusException exception = assertThrows(ResponseStatusException.class, () ->
+                checkoutService.checkout(Collections.singletonList("9999"))
+        );
+        assertTrue(exception.getMessage().contains("Invalid product id"),
+                "Exception message should indicate an invalid product id");
+    }
 }
