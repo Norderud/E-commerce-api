@@ -2,14 +2,14 @@ package no.norderud.bankid_ecommerceapi.repository;
 
 import jakarta.annotation.PostConstruct;
 import no.norderud.bankid_ecommerceapi.model.Product;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
 
 import java.math.BigDecimal;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Optional;
 
-@Component
+@Repository
 public class ProductRepository {
     private final Map<String, Product> products = new HashMap<>();
 
